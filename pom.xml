@@ -5,7 +5,7 @@
 
 	<groupId>org.iru.external.org.w3.schemas</groupId>
 	<artifactId>w3-schemas</artifactId>
-	<version>1.2</version>
+	<version>1.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>w3-schemas</name>
