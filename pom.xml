@@ -8,6 +8,25 @@
 	<version>1.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<name>w3-schemas</name>
+	<description>www.w3.org schemas</description>
+	<url>https://github.com/InternationalRoadTransportUnion/w3-schemas</url>
+	<licenses>
+		<license>
+			<name>The Open Software License 3.0 (OSL-3.0)</name>
+			<url>https://opensource.org/licenses/OSL-3.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:git:https://github.com/InternationalRoadTransportUnion/w3-schemas.git</connection>
+		<url>https://github.com/InternationalRoadTransportUnion/w3-schemas</url>
+	</scm>
+	<developers>
+		<developer>
+			<email>Matthieu.Verbert@iru.org</email>
+		</developer>
+	</developers>
 
 	<properties>
 		<wget.dir>${project.build.directory}/wget</wget.dir>
