@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.w3.schemas</groupId>
+		<artifactId>w3-schemas</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>w3-xmlmime-schema</artifactId>
+
+        <build>
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.maven-download-plugin</groupId>
+				<artifactId>download-maven-plugin</artifactId>
+
+				<executions>
+					<execution>
+						<id>download-schema</id>
+						<phase>initialize</phase><!-- generate-resources is too late -->
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>https://www.w3.org/2005/05/xmlmime</url>
+							<outputFileName>xmlmime.xsd</outputFileName>
+							<outputDirectory>${wget.dir}</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.iru.maven.plugins</groupId>
+				<artifactId>jaxbgenser-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb21-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
