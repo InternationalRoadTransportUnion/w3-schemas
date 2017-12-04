@@ -33,6 +33,29 @@
 			</plugin>
 
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>strip-dtd</id>
+						<phase>initialize</phase><!-- see above -->
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<replaceregexp file="${wget.dir}/xmldsig-core-schema.xsd"
+									       match="..DOCTYPE.*?!-- "
+									       replace="&lt;!-- "
+									       flags="s" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
 				<groupId>org.iru.maven.plugins</groupId>
 				<artifactId>jaxbgenser-maven-plugin</artifactId>
 			</plugin>
